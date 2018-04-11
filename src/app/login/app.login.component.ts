@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Account } from './../model/account';
  
 @Component({
-  selector: 'app-signup-form',
-  templateUrl: './app.signup.component.html',
-  styleUrls: ['./app.signup.component.css']
+  selector: 'app-login-form',
+  templateUrl: './app.login.component.html',
+  styleUrls: ['./app.login.component.css']
 })
-export class SignupComponent implements OnInit {
+export class LoginComponent implements OnInit {
  
 
   private account:Account;
