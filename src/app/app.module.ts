@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AddressFormComponent } from './address-form/app.addrform.component';
+import { SignupComponent } from './signup/app.signup.component';
 
 @Component({
   selector: 'app-header',
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: AddressFormComponent},
   {path: 'search', component: VehicleListComponent},
+  {path: 'signup', component: SignupComponent},
   {path: '**', component: AddressFormComponent}
 ];
 
@@ -41,7 +43,8 @@ const routes: Routes = [
     VehicleListComponent,
     VehicleDetailsComponent,
     AddressFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
