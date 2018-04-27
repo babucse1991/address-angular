@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Account } from './../model/account';
 import { AuthenticationService } from '../service/app.authendication.service';
@@ -14,12 +15,14 @@ export class LoginComponent implements OnInit {
 
   private account:Account;
   returnUrl: string;
+  user : any;
   private loading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private http: HttpClient
     ) { }
   
     ngOnInit() {
@@ -30,17 +33,34 @@ export class LoginComponent implements OnInit {
   
     onFormSubmit({ value, valid}: { value: Account, valid: boolean }) {
       
-      var token =  this.authenticationService.login(this.account.username, this.account.password).token;
-      if ( token == 'dom') {
-        this.router.navigate([this.returnUrl]);
-      } else {
-        alert('Error to login');
-        console.log(JSON.stringify(token));
-      }
-      
+
       this.account = value;
     	console.log( this.account);
     	console.log("valid: " + valid);
+
+      
+      
+      this.http.post<any>('http://localhost:3000/api/v1/login', { userName: this.account.username, password: this.account.password })
+      .subscribe(
+        user => {
+          console.log(user);
+          if (user && (user.success == true) ) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+             this.router.navigate([this.returnUrl]);
+         } else {
+          alert('Error to login ' + JSON.stringify(this.user));
+          console.log(JSON.stringify(this.user));
+         }
+        },
+        err => {
+          alert('Error to login - ' + err.error.data);
+          console.log("Error occured");
+        }
+      );
+        
+    
+      
+     
   	}
  
 }
