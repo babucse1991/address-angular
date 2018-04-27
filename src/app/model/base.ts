@@ -6,6 +6,7 @@ export class Base {
        updated: Date;
        reActive: boolean;
        notes: string;
+       username : string;
            
        constructor(values: Object = {}) {
          Object.assign(this, values);

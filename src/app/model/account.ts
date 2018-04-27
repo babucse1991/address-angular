@@ -4,5 +4,6 @@ export class Account extends Base{
     domain: string;
     username: string;
     password: string;
-    Model: Alias;
+    email : String;
+    model: Alias;
 }

@@ -9,19 +9,19 @@
               
               <div class="form-group">
                 <label for="username">User name</label>
-                <input type="text" [(ngModel)]="account.username"  id="username" name="username" placeholder="street">
+                <input type="text" [(ngModel)]="account.username"  id="username" name="username" placeholder="User name">
               </div>
               
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" [(ngModel)]="account.password"  id="password" name="password" placeholder="street">
+                <input type="password" [(ngModel)]="account.password"  id="password" name="password" placeholder="Password">
               </div>
               
               
              <!--- Buttons Block -->
              <div class="form-group ">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <a class="btn btn-default" href="#signup">Signup</a>
                         <button type="submit" class="btn btn-success" [disabled]="!signupForm.form.valid"> Login</button>
                     </div>
             </div>
