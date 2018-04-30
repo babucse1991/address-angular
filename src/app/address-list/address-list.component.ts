@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Address } from './../model/address';
-import { User } from './../model/User';
+import { User } from './../model/user';
 
 
 @Component({
