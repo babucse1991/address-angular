@@ -1,0 +1,28 @@
+
+
+<div class="form-group">
+  <label for="firstName">First name</label>
+  <input type="text" [(ngModel)]="search.firstName"  id="firstName" name="firstName" placeholder="Last name">
+</div>
+<div class="form-group">
+  <label for="lastName">First name</label>
+  <input type="text" [(ngModel)]="search.lastName"  id="lastName" name="lastName" placeholder="Last name">
+</div>
+<div class="form-group ">
+<div class="col-lg-10 col-lg-offset-2">
+      <button type="button" class="btn btn-success"(click)="searchAddress(search)" > Search </button>
+ </div>
+
+
+<table class="tftable">
+  <tr><th>Street</th><th>City</th><th>Country</th><th>State</th>
+    <th>Pin code</th>  <th>Created Time</th>
+  <tr *ngFor="let adres of address"
+      (click)="onSelect(adres)"
+      [class.selected]="adres === selectedVehicle">
+      <td>{{adres.street}}</td><td>{{adres.city}}</td> <td>{{adres.country}}</td> <td>{{adres.state}}</td>
+       <td>{{adres.pin_code}}</td> <td>{{adres.crct_time | date}}</td>
+  
+  </tr>
+</table>
+<app-vehicle-details [vehicle]="selectedVehicle"></app-vehicle-details>

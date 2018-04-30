@@ -12,6 +12,7 @@ import { AddressFormComponent } from './address-form/app.addrform.component';
 import { SignupComponent } from './signup/app.signup.component';
 import { LoginComponent } from './login/app.login.component';
 import { HeaderComponent } from './header/app.header.component';
+import { AddressListComponent } from './address-list/address-list.component';
 import { AuthGuard } from './authQuards/app.auth.guards';
 import { AuthenticationService } from './service/app.authendication.service';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'home', component: AddressFormComponent, canActivate: [AuthGuard] },
   {path: 'search', component: VehicleListComponent, canActivate: [AuthGuard] },
+  {path: 'searchAdr', component: AddressListComponent, canActivate: [AuthGuard] },
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent}
 ];
@@ -31,6 +33,7 @@ const routes: Routes = [
     VehicleDetailsComponent,
     AddressFormComponent,
     HeaderComponent,
+    AddressListComponent,
     SignupComponent,
     LoginComponent
   ],

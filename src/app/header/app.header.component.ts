@@ -10,7 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
         <a class="nav-link" href="#home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#search">Search</a>
+        <a class="nav-link" href="#search">Vehical</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#searchAdr">Search Address</a>
       </li>
       <li class="nav-item">
       <a class="nav-link" href="#">Log out</a>
