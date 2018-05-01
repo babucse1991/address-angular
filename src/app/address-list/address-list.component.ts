@@ -14,7 +14,8 @@ import { User } from './../model/user';
     
       address : any;
       search : User;      
-    
+      selectAddr : any
+
       constructor(
           private http: HttpClient
         ) {}
@@ -37,6 +38,11 @@ import { User } from './../model/user';
           }
         );
 
+      }
+
+      onSelect ( selectedObj ) {
+        this.selectAddr = Object.assign({}, selectedObj);
+        console.log(this.selectAddr);
       }
        
     

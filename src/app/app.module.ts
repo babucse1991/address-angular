@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AddressFormComponent } from './address-form/app.addrform.component';
+import { AddressUpdateComponent } from './address-update-form/address-update.component';
 import { SignupComponent } from './signup/app.signup.component';
 import { LoginComponent } from './login/app.login.component';
 import { HeaderComponent } from './header/app.header.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
     VehicleListComponent,
     VehicleDetailsComponent,
     AddressFormComponent,
+    AddressUpdateComponent,
     HeaderComponent,
     AddressListComponent,
     SignupComponent,

@@ -1,0 +1,39 @@
+
+<div *ngIf="address">
+    
+    <table>
+   	 <tr>
+   		 <td><label>ID: </label></td>
+   		 <td>{{address.id}}</td>
+   	 </tr>
+   	 <tr>
+   		 <td><label>Street: </label></td>
+   		 <td><input [(ngModel)]="address.street" placeholder="name" /></td>
+   	 </tr>
+   	 <tr>
+   		 <td><label>2nd Street: </label></td>
+   		 <td><input [(ngModel)]="address.stree2" placeholder="type" /></td>
+   	 </tr>
+   	 <tr>
+   		 <td><label>City: </label></td>
+   		 <td><input [(ngModel)]="address.city" placeholder="mass" /></td>
+    </tr>
+    <tr>
+        <td><label>State: </label></td>
+        <td><input [(ngModel)]="address.state" placeholder="mass" /></td>
+    </tr>
+    <tr>
+        <td><label>Country: </label></td>
+        <td><input [(ngModel)]="address.country" placeholder="mass" /></td>
+    </tr>
+    <tr>
+        <td><label>Pin code: </label></td>
+        <td><input [(ngModel)]="address.pin_code" placeholder="mass" /></td>
+    </tr>
+    </table>
+
+    <div class="col-lg-10 col-lg-offset-2">
+        <button type="button" class="btn btn-success"(click)="updateAddress(address)" > Updte </button>
+   </div>
+
+</div>

@@ -1,4 +1,4 @@
-
+<app-header></app-header>
 
 <div class="form-group">
   <label for="firstName">First name</label>
@@ -17,12 +17,15 @@
 <table class="tftable">
   <tr><th>Street</th><th>City</th><th>Country</th><th>State</th>
     <th>Pin code</th>  <th>Created Time</th>
+    <th>Modify Time</th>
   <tr *ngFor="let adres of address"
       (click)="onSelect(adres)"
-      [class.selected]="adres === selectedVehicle">
-      <td>{{adres.street}}</td><td>{{adres.city}}</td> <td>{{adres.country}}</td> <td>{{adres.state}}</td>
-       <td>{{adres.pin_code}}</td> <td>{{adres.crct_time | date}}</td>
+      [class.selected]="adres === selectAddr">
+      <td>{{adres.street}}</td><td>{{adres.city}}</td> 
+      <td>{{adres.country}}</td> <td>{{adres.state}}</td>
+       <td>{{adres.pin_code}}</td> <td>{{adres.crct_time | date}}</td> 
+       <td>{{adres.modfy_time | date}}</td>
   
   </tr>
 </table>
-<app-vehicle-details [vehicle]="selectedVehicle"></app-vehicle-details>
+<app-address-update [address]="selectAddr"></app-address-update>
