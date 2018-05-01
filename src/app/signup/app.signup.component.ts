@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
     console.log( this.account);
     console.log("valid: " + valid);
       
-      this.http.post<any>('http://localhost:3000/api/v1/signup', this.account)
+      this.http.post<any>('http://54.221.8.236:3000/api/v1/signup', this.account)
       .subscribe(
         user => {
           console.log(user);

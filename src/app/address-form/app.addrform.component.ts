@@ -28,7 +28,7 @@ export class AddressFormComponent implements OnInit {
     	console.log( this.address);
       console.log("valid: " + valid);
       
-      this.http.post<any>('http://localhost:3000/api/v1/address', this.address)
+      this.http.post<any>('http://54.221.8.236:3000/api/v1/address', this.address)
       .subscribe(
         user => {
           console.log(user);

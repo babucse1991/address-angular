@@ -11,7 +11,7 @@ export class AuthenticationService {
          var user = { };
          localStorage.setItem('currentUser', JSON.stringify(user));
          
-        return this.http.post<any>('http://localhost:3000/api/v1/login', { userName: username, password: password })
+        return this.http.post<any>('http://54.221.8.236:3000/api/v1/login', { userName: username, password: password })
             .map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && (user.success == true) ) {
