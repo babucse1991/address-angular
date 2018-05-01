@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
       
       
-      this.http.post<any>('http://54.221.8.236:3000/api/v1/login', { userName: this.account.username, password: this.account.password })
+      this.http.post<any>('http://localhost:3000/api/v1/login', { userName: this.account.username, password: this.account.password })
       .subscribe(
         user => {
           console.log(user);
