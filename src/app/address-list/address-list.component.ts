@@ -26,7 +26,7 @@ import { User } from './../model/user';
       searchAddress ( searchCatagory ) {  
 
         
-        this.http.get('http://localhost:3000/api/v1/address')
+        this.http.post<any>('http://localhost:3000/api/v1/address-search',searchCatagory )
         .subscribe(
           result => {
             this.address = result;
