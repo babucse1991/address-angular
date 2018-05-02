@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Account } from './../model/account';
- 
+import { environment } from './../../environments/environment';
+
 @Component({
   selector: 'app-signup-form',
   templateUrl: './app.signup.component.html',
@@ -32,7 +33,7 @@ export class SignupComponent implements OnInit {
     console.log( this.account);
     console.log("valid: " + valid);
       
-      this.http.post<any>('http://54.221.8.236:3000/api/v1/signup', this.account)
+      this.http.post<any>(environment.appUrl + '/api/v1/signup', this.account)
       .subscribe(
         user => {
           console.log(user);

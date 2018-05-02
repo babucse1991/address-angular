@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Address } from '../model/address';
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-address-update',
@@ -25,7 +26,7 @@ export class AddressUpdateComponent implements OnInit {
     this.currUser = JSON.parse(localStorage.getItem('currentUser'));
     updateAddr.username = this.currUser.data.user_name;
     
-    this.http.put<any>('http://54.221.8.236:3000/api/v1/address',updateAddr )
+    this.http.put<any>(environment.appUrl + '/api/v1/address',updateAddr )
     .subscribe(
       result => {
         this.address = result;

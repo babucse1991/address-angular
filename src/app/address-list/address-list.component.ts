@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Address } from './../model/address';
 import { User } from './../model/user';
-
+import { environment } from './../../environments/environment';
 
 @Component({
     selector: 'app-address-list',
@@ -27,7 +27,7 @@ import { User } from './../model/user';
       searchAddress ( searchCatagory ) {  
 
         
-        this.http.post<any>('http://54.221.8.236:3000/api/v1/address-search',searchCatagory )
+        this.http.post<any>(environment.appUrl + '/api/v1/address-search',searchCatagory )
         .subscribe(
           result => {
             this.address = result;
