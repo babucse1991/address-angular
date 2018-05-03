@@ -28,4 +28,4 @@
   
   </tr>
 </table>
-<app-address-update [address]="selectAddr"></app-address-update>
+<app-address-update [address]="selectAddr"  *ngIf="role == 'Admin'"></app-address-update>

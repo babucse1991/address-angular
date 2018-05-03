@@ -15,6 +15,8 @@ import { environment } from './../../environments/environment';
       address : any;
       search : User;      
       selectAddr : any
+      private currUser : any;
+      private role : String;
 
       constructor(
           private http: HttpClient
@@ -22,6 +24,9 @@ import { environment } from './../../environments/environment';
     
       ngOnInit() {
         this.search = new User();
+        this.currUser = JSON.parse(localStorage.getItem('currentUser'));
+        console.log(this.currUser);
+        this.role = this.currUser.data.account;
       }
     
       searchAddress ( searchCatagory ) {  

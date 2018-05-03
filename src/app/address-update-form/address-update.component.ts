@@ -26,15 +26,15 @@ export class AddressUpdateComponent implements OnInit {
     this.currUser = JSON.parse(localStorage.getItem('currentUser'));
     updateAddr.username = this.currUser.data.user_name;
     
-    this.http.put<any>(environment.appUrl + '/api/v1/address',updateAddr )
+    this.http.post<any>(environment.appUrl + '/api/v1/update-address',updateAddr )
     .subscribe(
       result => {
         this.address = result;
         alert('Address updated successfully! Search again.') ;
         console.log(this.address);
       }, err => {
-        alert('Error to update address - ' + err);
-        console.log("Error occured");
+        alert('Error to update address - ' + JSON.stringify(err));
+        console.log(err);
       }
     );
 

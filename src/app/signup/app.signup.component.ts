@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
 
   private account:Account;
   returnUrl: string;
+  roles: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,8 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         this.account = new Account();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
+        this.roles = [{ name : 'Admin', val : 'Admin' },
+        { name : 'Customer', val : 'Customer' }];
     }
   
     onFormSubmit({ value, valid}: { value: Account, valid: boolean }) {
