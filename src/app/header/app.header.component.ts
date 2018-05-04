@@ -12,8 +12,11 @@ import { Component, OnInit, Input } from '@angular/core';
       <li class="nav-item">
         <a class="nav-link" href="#search">Vehical</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="role == 'Admin' || role == 'Agent'">
         <a class="nav-link" href="#searchAdr">Search Address</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#myAddress">My Address</a>
       </li>
       <li class="nav-item">
       <a class="nav-link" href="#">Log out</a>
@@ -23,5 +26,16 @@ import { Component, OnInit, Input } from '@angular/core';
    `
   })
   export class HeaderComponent {
+
+    private currUser : any;
+    private role : String;
+
+    constructor() {}
+
+    ngOnInit() {
+      this.currUser = JSON.parse(localStorage.getItem('currentUser'));
+      console.log(this.currUser);
+      this.role = this.currUser.data.account;
+    }
   }
   

@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
         this.account = new Account();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
         this.roles = [{ name : 'Admin', val : 'Admin' },
-        { name : 'Customer', val : 'Customer' }];
+        { name : 'Recipient', val : 'Recipient' }, { name : 'Agent', val : 'Agent' }];
     }
   
     onFormSubmit({ value, valid}: { value: Account, valid: boolean }) {

@@ -20,7 +20,7 @@
     <th>Modify Time</th>
   <tr *ngFor="let adres of address"
       (click)="onSelect(adres)"
-      [class.selected]="adres === selectAddr">
+      [class.selected]="adres === selectAddr" style="cursor: pointer">
       <td>{{adres.street}}</td><td>{{adres.city}}</td> 
       <td>{{adres.country}}</td> <td>{{adres.state}}</td>
        <td>{{adres.pin_code}}</td> <td>{{adres.crct_time | date}}</td> 
@@ -28,4 +28,4 @@
   
   </tr>
 </table>
-<app-address-update [address]="selectAddr"  *ngIf="role == 'Admin'"></app-address-update>
+<app-address-update [address]="selectAddr"></app-address-update>
