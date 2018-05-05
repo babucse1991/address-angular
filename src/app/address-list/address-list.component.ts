@@ -17,6 +17,7 @@ import { environment } from './../../environments/environment';
       selectAddr : any
       private currUser : any;
       private role : String;
+      private searchApi : String;
 
       constructor(
           private http: HttpClient
@@ -31,8 +32,13 @@ import { environment } from './../../environments/environment';
     
       searchAddress ( searchCatagory ) {  
 
+        this.searchApi = '/api/v1/address-search';
+        if ( this.role == 'Agent') {
+          this.searchApi = '/api/v1/agent-address-search';
+          searchCatagory.agentUserName = this.currUser.data.user_name;
+        }
         
-        this.http.post<any>(environment.appUrl + '/api/v1/address-search',searchCatagory )
+        this.http.post<any>(environment.appUrl + this.searchApi, searchCatagory )
         .subscribe(
           result => {
             this.address = result;

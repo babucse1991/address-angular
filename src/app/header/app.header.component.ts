@@ -9,14 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
       <li class="nav-item active">
         <a class="nav-link" href="#home">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#search">Vehical</a>
-      </li>
       <li class="nav-item" *ngIf="role == 'Admin' || role == 'Agent'">
         <a class="nav-link" href="#searchAdr">Search Address</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#myAddress">My Address</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#profile">Profile</a>
       </li>
       <li class="nav-item">
       <a class="nav-link" href="#">Log out</a>

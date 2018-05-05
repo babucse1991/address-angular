@@ -30,7 +30,7 @@ export class AddressUpdateComponent implements OnInit {
     .subscribe(
       result => {
         this.address = result;
-        alert('Address updated successfully! Search again.') ;
+        alert('Address updated successfully!') ;
         console.log(this.address);
       }, err => {
         alert('Error to update address - ' + JSON.stringify(err));

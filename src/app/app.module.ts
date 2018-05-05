@@ -15,6 +15,7 @@ import { LoginComponent } from './login/app.login.component';
 import { HeaderComponent } from './header/app.header.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { MyAddressListComponent } from './my-address/my-address-list.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './authQuards/app.auth.guards';
 import { AuthenticationService } from './service/app.authendication.service';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'search', component: VehicleListComponent, canActivate: [AuthGuard] },
   {path: 'searchAdr', component: AddressListComponent, canActivate: [AuthGuard] },
   {path: 'myAddress', component: MyAddressListComponent, canActivate: [AuthGuard] },
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent}
 ];
@@ -39,6 +41,7 @@ const routes: Routes = [
     HeaderComponent,
     AddressListComponent,
     MyAddressListComponent,
+    ProfileComponent,
     SignupComponent,
     LoginComponent
   ],

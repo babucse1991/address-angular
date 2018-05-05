@@ -1,0 +1,31 @@
+
+<app-header></app-header>
+
+<div class="row custom-row">
+    <div class= "col-sm-5 custom-container jumbotron">
+        <legend>{{currUser.first_name}} {{ currUser.last_name}} Profile </legend>
+        <label>Role : {{currUser.account}}</label>
+        <h5>Referred users</h5>
+        <ul>
+            <li *ngFor="let user of refferalNames"> 
+                {{ user.name }}
+            </li>
+        </ul>
+        
+
+        <div class="form-group">
+            <label for="domain">Select to reffer </label>
+            <select (change)="newRefferId = $event.target.value" [(ngModel)]="newRefferId" name="domain" id="domain">
+              <option *ngFor="let user of userNames" value= {{user.userid}}>
+                 {{ user.name}}
+              </option>
+            </select>
+         </div>
+
+         <div class="col-lg-10 col-lg-offset-2">
+            <button type="reset" class="btn btn-default">Cancel</button>
+            <button type="button" class="btn btn-success" (click)="saveNewReferrer(newRefferId)"> Submit</button>
+        </div>
+
+    </div>
+</div>
