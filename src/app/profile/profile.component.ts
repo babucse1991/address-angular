@@ -15,7 +15,7 @@ import { environment } from './../../environments/environment';
     newRefferId : String;
     constructor( private http: HttpClient ) {
       setTimeout(()=>{ 
-        this.getAllUserIds();    
+        // this.getAllUserIds();    
       },3000);
 
      }
@@ -25,7 +25,7 @@ import { environment } from './../../environments/environment';
         this.currUser = this.currUser.data;
         console.log(this.currUser);
         this.getRefferedByUser();
-        
+        this.getAllUserIds();    
     }
 
 

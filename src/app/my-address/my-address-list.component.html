@@ -4,14 +4,15 @@
 <table class="tftable">
   <tr><th>Street</th><th>City</th><th>Country</th><th>State</th>
     <th>Pin code</th>  <th>Created Time</th>
-    <th>Modify Time</th> <th>Modify</th>
+    <th>Modify Time</th> <th>Modify</th> <th>Aliase</th>
   <tr *ngFor="let adres of address"
       (click)="onSelect(adres)"
       [class.selected]="adres === selectAddr" style="cursor: pointer">
       <td>{{adres.street}}</td><td>{{adres.city}}</td> 
       <td>{{adres.country}}</td> <td>{{adres.state}}</td>
        <td>{{adres.pin_code}}</td> <td>{{adres.crct_time | date}}</td> 
-       <td>{{adres.modfy_time | date}}</td> <td >Edit</td>
+       <td>{{adres.modfy_time | date}}</td> <td >Edit</td> 
+       <td><a [routerLink]="['/aliase', adres.addr_id]"> View aliase </a></td>
   
   </tr>
 </table>

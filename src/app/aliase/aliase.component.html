@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<table class="tftable">
+    <tr><th>First name</th><th>Last Name</th><th>Created Time</th>
+      <th>Modify Time</th> <th>Account</th>
+    <tr *ngFor="let aliase of aliaseList"
+        (click)="onSelect(aliase)"
+        [class.selected]="aliase === selectAliase" style="cursor: pointer">
+        <td>{{aliase.ali_first_name}}</td><td>{{aliase.ali_first_name}}</td> 
+        <td>{{aliase.crct_time | date}}</td> <td>{{aliase.modfy_time | date}}</td>
+        <td><a [routerLink]="['/account', aliase.aliase_id]"> View account </a></td>
+    </tr>
+  </table>
+  <br>
+  <div>
+    <table>
+   	 <tr>
+   		 <td><label>First name: </label></td>
+   		 <td><input [(ngModel)]="aliase.aliFirstName" placeholder="First name" /></td>
+   	 </tr>
+   	 <tr>
+   		 <td><label>Last name: </label></td>
+   		 <td><input [(ngModel)]="aliase.aliLastName" placeholder="Last name" /></td>
+   	 </tr>
+    </table>
+
+    <div class="col-lg-10 col-lg-offset-2">
+        <button type="button" class="btn btn-success"(click)="addAliase(aliase)" > Add </button>
+   </div>
+
+</div>

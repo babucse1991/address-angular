@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<table class="tftable">
+    <tr><th>Domain name</th><th>User Name</th>
+      <th>password</th><th>email</th>
+      <th>Created Time</th><th>Modify Time</th>
+    <tr *ngFor="let account of accountList"
+        (click)="onSelect(account)"
+        [class.selected]="account === selectaccount" style="cursor: pointer">
+        <td>{{account.domain_name}}</td><td>{{account.domain_user_name}}</td> 
+        <td>{{account.domain_password}}</td><td>{{account.email}}</td> 
+        <td>{{account.crct_time | date}}</td> <td>{{account.modfy_time | date}}</td>
+    </tr>
+  </table>
+  <br>
+  <div>
+    <table>
+   	 <tr>
+   		 <td><label>Domain Name: </label></td>
+   		 <td><input [(ngModel)]="account.domain" placeholder="Domain name" /></td>
+   	 </tr>
+   	 <tr>
+   		 <td><label>User name: </label></td>
+   		 <td><input [(ngModel)]="account.username" placeholder="User name" /></td>
+    </tr>
+    <tr>
+      <td><label>Password: </label></td>
+      <td><input [(ngModel)]="account.password" placeholder="Password" /></td>
+    </tr>  
+    <tr>
+      <td><label>Email: </label></td>
+      <td><input [(ngModel)]="account.email" placeholder="Email" /></td>
+    </tr>
+    </table>
+
+    <div class="col-lg-10 col-lg-offset-2">
+        <button type="button" class="btn btn-success"(click)="addAccount(account)" > Add </button>
+   </div>
+
+</div>

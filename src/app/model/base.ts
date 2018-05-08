@@ -3,7 +3,7 @@ export class Base {
        id: number;
        active: boolean;
        created: Date;
-       updated: Date;
+       modified: Date;
        reActive: boolean;
        notes: string;
        username : string;
