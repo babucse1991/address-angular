@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<h6>Account</h6>
 <table class="tftable">
     <tr><th>Domain name</th><th>User Name</th>
       <th>password</th><th>email</th>
@@ -34,7 +34,9 @@
     </table>
 
     <div class="col-lg-10 col-lg-offset-2">
-        <button type="button" class="btn btn-success"(click)="addAccount(account)" > Add </button>
+        <button type="button" class="btn btn-success"(click)="addAccount(account)" [hidden]="addEdit"> Add </button>
+        <button type="button" class="btn btn-success"(click)="updateAccount(account)" [hidden]="!addEdit" > Update </button>
+        <button type="button" class="btn btn-default"(click)="clearFields(account)" > clear </button>
    </div>
 
 </div>

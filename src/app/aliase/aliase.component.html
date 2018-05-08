@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<h6>Aliase</h6>
 <table class="tftable">
     <tr><th>First name</th><th>Last Name</th><th>Created Time</th>
       <th>Modify Time</th> <th>Account</th>
@@ -25,7 +25,9 @@
     </table>
 
     <div class="col-lg-10 col-lg-offset-2">
-        <button type="button" class="btn btn-success"(click)="addAliase(aliase)" > Add </button>
+        <button type="button" class="btn btn-success"(click)="addAliase(aliase)" [hidden]="addEdit" > Add </button>
+        <button type="button" class="btn btn-success"(click)="updateAliase(aliase)" [hidden]="!addEdit" > Update </button>
+        <button type="button" class="btn btn-default"(click)="clearFields(aliase)" > clear </button>
    </div>
 
 </div>

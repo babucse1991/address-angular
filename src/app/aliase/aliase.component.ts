@@ -14,6 +14,7 @@ import { environment } from './../../environments/environment';
 
     private aliase : Alias = new Alias();
     private aliaseList : any;
+    private addEdit : boolean = false;
     addressId: number;
     private sub: any;
 
@@ -60,4 +61,31 @@ import { environment } from './../../environments/environment';
         );
       }
 
+      clearFields () {
+        this.aliase = new Alias();
+        this.addEdit = false;
+      }
+
+      onSelect (aliase) {
+        this.aliase.aliFirstName = aliase.ali_first_name;
+        this.aliase.aliLastName = aliase.ali_last_name;
+        this.aliase.id = aliase.aliase_id;
+        this.addEdit = true;
+      }
+
+      updateAliase(aliase) {
+        this.http.post<any>(environment.appUrl + '/aliaseDomain/api/v1/update-aliase', aliase )
+        .subscribe(
+          result => {
+            alert('Aliase updated successfully!') ;
+            this.aliase = new Alias();
+            console.log(result);
+            this.getAliase ();
+            this.addEdit = false;
+          }, err => {
+            alert('Error to post aliase');
+            console.log(err);
+          }
+        );
+      }
   }

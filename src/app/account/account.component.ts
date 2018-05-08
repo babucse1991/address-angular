@@ -14,6 +14,7 @@ import { environment } from './../../environments/environment';
 
     private account : Account = new Account();
     private accountList : any;
+    private addEdit : boolean = false;
     aliaseId: number;
     private sub: any;
 
@@ -54,6 +55,36 @@ import { environment } from './../../environments/environment';
             this.accountList = result;
           }, err => {
             alert('Error to get account');
+            console.log(err);
+          }
+        );
+      }
+
+      clearFields () {
+        this.account = new Account();
+        this.addEdit = false;
+      }
+
+      onSelect (account) {
+        this.account.domain = account.domain_name;
+        this.account.email = account.email;
+        this.account.password = account.domain_password;
+        this.account.username = account.domain_user_name;
+        this.account.id = account.account_id;
+        this.addEdit = true;
+      }
+
+      updateAccount(account) {
+        this.http.post<any>(environment.appUrl + '/aliaseDomain/api/v1/update-account', account )
+        .subscribe(
+          result => {
+            alert('Account updated successfully!') ;
+            this.account = new Account();
+            console.log(result);
+            this.getAccount();
+            this.addEdit = false;
+          }, err => {
+            alert('Error to post Account');
             console.log(err);
           }
         );
