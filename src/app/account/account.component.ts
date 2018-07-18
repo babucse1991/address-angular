@@ -66,7 +66,6 @@ import { environment } from './../../environments/environment';
       }
 
       onSelect (account) {
-        this.account.domain = account.domain_name;
         this.account.email = account.email;
         this.account.password = account.domain_password;
         this.account.username = account.domain_user_name;

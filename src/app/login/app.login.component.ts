@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
       this.authenticationService.logout();
         this.account = new Account();
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/location-map';
     }
   
     onFormSubmit({ value, valid}: { value: Account, valid: boolean }) {
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
       
       
-      this.http.post<any>(environment.appUrl + '/api/v1/login', { userName: this.account.username, password: this.account.password })
+      this.http.post<any>(environment.appUrl + '/users/login', { email: this.account.username, password: this.account.password })
       .subscribe(
         user => {
           console.log(user);

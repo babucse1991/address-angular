@@ -14,8 +14,7 @@ export class SignupComponent implements OnInit {
 
   private account:Account;
   returnUrl: string;
-  roles: any;
-
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -25,8 +24,6 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         this.account = new Account();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
-        this.roles = [{ name : 'Admin', val : 'Admin' },
-        { name : 'Recipient', val : 'Recipient' }, { name : 'Agent', val : 'Agent' }];
     }
   
     onFormSubmit({ value, valid}: { value: Account, valid: boolean }) {
@@ -36,7 +33,7 @@ export class SignupComponent implements OnInit {
     console.log( this.account);
     console.log("valid: " + valid);
       
-      this.http.post<any>(environment.appUrl + '/api/v1/signup', this.account)
+      this.http.post<any>(environment.appUrl + '/users/register', this.account)
       .subscribe(
         user => {
           console.log(user);

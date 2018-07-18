@@ -18,6 +18,7 @@ import { MyAddressListComponent } from './my-address/my-address-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AliaseComponent } from './aliase/aliase.component';
 import { AccountComponent } from './account/account.component';
+import { LocationMapComponent } from './loc-map/app.location-map.component';
 import { AuthGuard } from './authQuards/app.auth.guards';
 import { AuthenticationService } from './service/app.authendication.service';
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'myAddress', component: MyAddressListComponent, canActivate: [AuthGuard] },
   {path: 'aliase/:addressId', component: AliaseComponent, canActivate: [AuthGuard] },
   {path: 'account/:aliaseId', component: AccountComponent, canActivate: [AuthGuard] },
+  {path: 'location-map', component: LocationMapComponent, canActivate: [AuthGuard] },
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent}
@@ -48,6 +50,7 @@ const routes: Routes = [
     ProfileComponent,
     AliaseComponent,
     AccountComponent,
+    LocationMapComponent,
     SignupComponent,
     LoginComponent
   ],
