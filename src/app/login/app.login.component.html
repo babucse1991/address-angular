@@ -1,14 +1,26 @@
+<style>
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+</style>
+
+<div class="center">
+  <img src="https://thumbs.dreamstime.com/b/vector-isolated-illustration-colorful-abstract-butterfly-creative-logo-design-element-symbol-concept-beauty-salon-73662605.jpg" 
+  alt="Trulli" width="200" height="200">
+</div>
+
 
 <div class="col-md-6 col-md-offset-3">
     
-         
+
     <form novalidate (ngSubmit)="onFormSubmit(signupForm)" #signupForm="ngForm" >
       
-            <legend>Login</legend>
-           
+            
               
               <div class="form-group">
-                <label for="username">User name</label>
+                <label for="username">Mobile number</label>
                 <input type="text" class="form-control"  [(ngModel)]="account.username"  id="username" name="username" placeholder="User name">
               </div>
               
@@ -18,15 +30,14 @@
               </div>
               
               
-             <!--- Buttons Block -->
-             <div class="form-group ">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <a class="btn btn-default" href="#signup">Signup</a>
-                        <button type="submit" class="btn btn-success" [disabled]="!signupForm.form.valid"> Login</button>
-                    </div>
-            </div>
+              <!--- <a class="btn btn-default" href="#signup">Signup</a> -->
+              <button type="submit" class="form-control btn btn-success" [disabled]="!signupForm.form.valid"> Login</button>
+              <div class="center"><a  href="#signup">&nbsp;Forgot password</a> </div>
+              
+             
+            
             
       </form>
-      {{address | json}}
+      
     
   </div>
